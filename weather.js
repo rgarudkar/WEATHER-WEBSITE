@@ -9,11 +9,11 @@ btn.addEventListener('click', () => {
 		console.log(data.features[0].place_name);
 		var name = document.querySelector('#name');
 		name.textContent = data.features[0].place_name;
-		console.log(long, lat);
+		document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/? "+ name.textContent +"')"
 		fetch('http://api.weatherstack.com/current?access_key=b14f3b4560befc881867064b969faa61&query='+lat+','+long+'&unit=m').then((res) => {
 		return res.json();
 	}).then((data) => {
-		console.log(data.current.temperature);
+		console.log(data);
 		var temp = document.querySelector('#temp');
 		temp.textContent = data.current.temperature;
 		var desc = document.querySelector('#desc');
@@ -25,17 +25,18 @@ btn.addEventListener('click', () => {
 		var isd = document.querySelector('#isd');
 		if(data.current.is_day === 'yes')
 		{
-			isd.textContent = 'day';
+			isd.textContent = 'Day';
 		}
 		else
 		{
-			isd.textContent = 'night';
+			isd.textContent = 'Night';
 		}
 		
 		var ps = document.querySelector('#ps');
 		ps.textContent = data.current.precip;
 		var prs = document.querySelector('#prs');
 		prs.textContent = data.current.pressure;
+
 	})
  })
 	})
