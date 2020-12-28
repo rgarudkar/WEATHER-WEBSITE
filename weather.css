@@ -85,12 +85,12 @@ h1.heading
   width: 100%;
   max-width: 320px;
   margin: 1em;
-  
+
 }
 .pic
 {
-height:100px;
-width:90px;
+height:140px;
+width:100px;
 float: right;
 position: relative;
 }
